@@ -67,3 +67,15 @@ WHERE name LIKE 'Se_en';// could be seven or se7en.they but match the discriptio
 	FROM movies
 	WHERE genre = 'romance'
    	OR genre = 'comedy';
+
+// ORDER BY
+
+	SELECT name, year
+	FROM movies
+	ORDER BY name;
+
+// LIMIT 
+
+	SELECT * FROM movies 
+	ORDER BY imdb_rating DESC 
+	LIMIT 3;
