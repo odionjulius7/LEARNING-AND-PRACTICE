@@ -1,0 +1,69 @@
+		---SQL----
+
+
+
+SELECT * 
+FROM movies;
+
+SELECT name, title
+FROM movies;
+
+SELECT * 
+FROM movies 
+WHERE year > 2014;//=, >=, <
+
+
+SELECT DISTINCT name 
+FROM movies;
+
+// getting characters that are almost alike
+
+SELECT * 
+FROM movies
+WHERE name LIKE 'Se_en';// could be seven or se7en.they but match the discription.
+// 'se' and 'en' while dis '_' could be anything
+
+
+// This statement below filters the result set to only include movies with names that begin with the letter ‘A’:
+// % is a wildcard character that matches zero or more missing letters in the pattern. For example:
+// A% matches all movies with names that begin with letter ‘A’
+
+
+   SELECT * 
+   FROM movies
+   WHERE name LIKE 'A%';
+
+
+// IS NULL or IS NOT NULL
+      SELECT name
+      FROM movies 
+      WHERE imdb_rating IS NULL;
+
+
+
+// BETWEEN OPERATOR
+
+	SELECT *
+	FROM movies
+	WHERE year BETWEEN 1970 AND 1979;
+
+// AND OPERATOR
+
+	SELECT * 
+	FROM movies
+	WHERE year BETWEEN 1990 AND 1999
+        AND genre = 'romance';
+
+	///
+   SELECT *
+   FROM movies
+   WHERE year < 1985
+   AND genre = 'horror';
+
+
+// OR OPERATOR
+
+	SELECT *
+	FROM movies
+	WHERE genre = 'romance'
+   	OR genre = 'comedy';
