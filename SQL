@@ -149,3 +149,68 @@ WHERE twitter_handle IS NULL;
    recipient TEXT NOT NULL,
    award_name TEXT DEFAULT 'Grammy'
 );
+
+
+
+
+
+	=========================================================================
+		CALCULATING/AGGREGATING WITH SQL OR AGGREGATE FUNCTION IN SQL
+	=========================================================================
+***CALCULATE ALL ROWS
+  SELECT COUNT(*) 
+  FROM fake_apps;
+
+****SELECTIVE COUNTING
+	SELECT COUNT(*) 
+	FROM fake_apps
+	WHERE price = 0;
+
+****SUM
+	SELECT SUM(downloads)
+	FROM fake_apps;
+
+
+****MAX/MIN CALCULATION
+	SELECT MAX(price)
+	FROM fake_apps;
+
+	SELECT MIN(download)
+	FROM fake_apps;
+
+
+
+****AVG CALCULATION
+	SELECT AVG(downloads)
+	FROM fake_apps;
+
+******ROUND 
+	SELECT name, ROUND(price, 0)
+	FROM fake_apps;
+
+	*SELECT ROUND(AVG(price), 2)
+	 FROM fake_apps;
+
+====
+NOTE: ROUND() function takes two arguments inside the parenthesis:
+a column name
+an integer.
+	
+Here, we pass the column price and integer 0 'ZERO' as 
+arguments. SQL rounds the values in the column 
+to 0 decimal places in the output.
+====
+====@ENDROUND
+
+
+
+
+*****GROUP BY****\
+	SELECT category, SUM(downloads)
+	FROM fake_apps
+	GROUP BY category;
+
+
+
+
+
